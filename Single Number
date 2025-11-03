@@ -1,0 +1,39 @@
+Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+
+You must implement a solution with a linear runtime complexity and use only constant extra space.
+
+ 
+
+Example 1:
+
+Input: nums = [2,2,1]
+
+Output: 1
+
+Example 2:
+
+Input: nums = [4,1,2,1,2]
+
+Output: 4
+
+code) #include <stdio.h>
+
+int main() {
+    // Input array
+    int nums[] = {4, 1, 2, 1, 2};
+    int n = sizeof(nums) / sizeof(nums[0]); // array ka size
+
+    int single = 0; // ye variable hamesha XOR store karega
+
+    // Loop through array
+    for(int i = 0; i < n; i++) {
+        single = single ^ nums[i]; 
+        // XOR trick: same numbers cancel ho jate hain
+        // 0 ^ num = num, num ^ num = 0
+    }
+
+    // Result print karo
+    printf("Single number is: %d\n", single);
+
+    return 0;
+}
