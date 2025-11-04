@@ -1,0 +1,61 @@
+Given a 2D integer array matrix, return the transpose of matrix.
+The transpose of a matrix is the matrix flipped over its main diagonal, switching the matrix's row and column indices.
+Example 1:
+Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
+Output: [[1,4,7],[2,5,8],[3,6,9]]
+Example 2:
+Input: matrix = [[1,2,3],[4,5,6]]
+Output: [[1,4],[2,5],[3,6]]
+Constraints:
+m == matrix.length
+n == matrix[i].length
+1 <= m, n <= 1000
+1 <= m * n <= 105
+-109 <= matrix[i][j] <= 109
+
+code) 
+#include <stdio.h>
+int main (){
+    int r , c; 
+     
+     //take input for r and c.
+    printf("Enter total number of rows = "); 
+    scanf("%d" ,&r); 
+    
+    printf("Enter total number of columns = "); 
+    scanf("%d" ,&c); 
+    
+    //declare array
+    int arr[r][c]; 
+    
+    //taking input array elements.
+    printf("Input elements for the matrix="); 
+    
+    for(int i=0 ; i<r ; i++){
+        for(int j=0 ; j<c ; j++){
+            scanf("%d" ,&arr[i][j]); 
+        }
+    }
+    
+    //printing array elements
+    printf("Input matrix is as follows:\n"); 
+    for(int i=0 ; i<r ; i++){
+        for(int j=0 ; j<c ; j++){
+            printf("%d " ,arr[i][j]); 
+        }
+        printf("\n"); 
+    }
+    
+    //printing transpose
+    printf("Transpose of the matrix is:\n");
+    for(int j=0 ; j<c ; j++){
+        for(int i=0 ; i<r ; i++){
+            printf("%d " ,arr[i][j]); 
+        }
+        printf("\n"); 
+    }
+    
+    
+    
+    return 0; 
+}
