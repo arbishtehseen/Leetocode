@@ -33,4 +33,36 @@ n == mat.length == mat[i].length
 1 <= mat[i][j] <= 100 
 
 code)
+#include <stdio.h>
+
+int main() {
+    // Square matrix input (3x3 example)
+    int mat[3][3] = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+
+    int n = 3; // matrix size (rows = cols)
+
+    int sum = 0;
+
+    // Loop through rows
+    for (int i = 0; i < n; i++) {
+        // Primary diagonal -> mat[i][i]
+        sum += mat[i][i];
+
+        // Secondary diagonal -> mat[i][n - i - 1]
+        // Lekin agar dono diagonal same element pe mil rahe hain (center element)
+        // to usko dobara add nahi karna
+        if (i != n - i - 1) {
+            sum += mat[i][n - i - 1];
+        }
+    }
+
+    // Result print karo
+    printf("Sum of diagonals = %d\n", sum);
+
+    return 0;
+}
 
