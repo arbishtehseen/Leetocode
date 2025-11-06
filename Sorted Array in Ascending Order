@@ -1,0 +1,60 @@
+Given an array of integers nums, sort the array in ascending order and return it.
+
+You must solve the problem without using any built-in functions in O(nlog(n)) time complexity and with the smallest space complexity possible.
+
+ 
+
+Example 1:
+
+Input: nums = [5,2,3,1]
+Output: [1,2,3,5]
+Explanation: After sorting the array, the positions of some numbers are not changed (for example, 2 and 3), while the positions of other numbers are changed (for example, 1 and 5).
+Example 2:
+
+Input: nums = [5,1,1,2,0,0]
+Output: [0,0,1,1,2,5]
+Explanation: Note that the values of nums are not necessarily unique.
+ 
+
+Constraints:
+
+1 <= nums.length <= 5 * 104
+-5 * 104 <= nums[i] <= 5 * 104
+
+code) 
+#include <stdio.h>
+int main (){
+	int size , temp; 
+	
+	// Taking Input Array Size
+	
+	printf("Enter the size of array: "); 
+	scanf("%d" ,&size); 
+	
+	int arr[size]; 
+	
+	//input array elements.
+	
+	printf("Input Array elements= "); 
+	for(int i=0 ; i<size ; i++){
+		scanf("%d" ,&arr[i]); 
+	}
+	
+	//sorting array in ascending order 
+	for(int i=0; i< size-1 ; i++){
+		for(int j=0 ; j< size-i-1 ; j++){
+			if(arr[j] > arr[j+1]) {
+				temp = arr[j]; 
+				arr[j] = arr[j+1]; 
+				arr[j+1] = temp; 
+			}
+		}
+	}
+	
+	//printing sorted array.
+	printf("Sorter Array in Ascending Order:\n");
+	for(int i=0 ; i<size ; i++) {
+		printf("%d " ,arr[i]); 
+	}
+	return 0; 
+}
