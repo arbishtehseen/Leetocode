@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main(void) {
+    int nums[] = {0, 2, 1, 5, 3, 4};
+    int n = sizeof(nums) / sizeof(nums[0]);
+    int ans[n];
+
+    for (int i = 0; i < n; i++) {
+        ans[i] = nums[nums[i]];
+    }
+
+    printf("Resulting array: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", ans[i]);
+    }
+
+    return 0;
+}
