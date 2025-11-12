@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main(void) {
+    int nums[] = {3, 1, 2, 4};
+    int n = sizeof(nums) / sizeof(nums[0]);
+    int ans[n];
+    int evenIndex = 0, oddIndex = n - 1;
+
+    for (int i = 0; i < n; i++) {
+        if (nums[i] % 2 == 0) {
+            ans[evenIndex++] = nums[i]; // even number front mein daalo
+        } else {
+            ans[oddIndex--] = nums[i];  // odd number back se daalo
+        }
+    }
+
+    printf("Resulting array: ");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", ans[i]);
+    }
+
+    return 0;
+}
